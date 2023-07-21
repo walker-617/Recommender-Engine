@@ -89,6 +89,11 @@ data = df2.to_dict('records')
 all_movies = data
 
 
+@app.route("/")
+def index():
+    return "Welcome to movie recommender"
+
+
 @app.route("/get_recommendations/<int:k>/<ids>")
 def similar_movies(ids, k):
     ids = ids.split("|")
